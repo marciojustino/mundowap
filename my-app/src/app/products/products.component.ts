@@ -11,11 +11,14 @@ import {Router} from "@angular/router";
 export class ProductsComponent implements OnInit {
   products = [];
   file: any;
+  error: any;
+  username: any;
 
   constructor(private http: HttpClient, private route: Router) {
   }
 
   ngOnInit() {
+    this.username = localStorage.getItem('user');
     this.getProducts();
   }
 
@@ -59,6 +62,12 @@ export class ProductsComponent implements OnInit {
         this.getProducts();
       }, (error) => {
         console.error(error);
+        this.error = error.error.message;
       });
+  }
+
+  logout() {
+    localStorage.clear();
+    this.route.navigate(['login']);
   }
 }

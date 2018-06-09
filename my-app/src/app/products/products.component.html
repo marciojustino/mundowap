@@ -1,5 +1,6 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <span class="nav-brand">Olá {{ username }}</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -7,8 +8,10 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
+      </ul>
+      <ul class="navbar-nav mr-right">
         <li class="nav-item">
-          <a class="nav-link" (click)="logout()">Products <span class="sr-only">(current)</span></a>
+          <a class="nav-link" (click)="logout()">Sair</a>
         </li>
       </ul>
     </div>
@@ -27,6 +30,9 @@
     </div>
     <div class="form-group" *ngIf="file">
       <label>{{ file.name }}</label>
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="error">
+      {{ error }}
     </div>
     <button class="btn btn-primary" [hidden]="!file" (click)="import()">Importar</button>
   </form>
@@ -47,9 +53,9 @@
       <td><a href="" id="item{{ p.id }}" (click)="remove(p)">Excluir</a></td>
       <td>{{ p.ean }}</td>
       <td>{{ p.name }}</td>
-      <td>{{ p.price }}</td>
+      <td>R${{ p.price }}</td>
       <td>{{ p.qtd }}</td>
-      <td>{{ p.fabricated_at }}</td>
+      <td>{{ p.fabricated_at | date: 'dd/MM/yyyy' }}</td>
     </tr>
     </tbody>
   </table>
