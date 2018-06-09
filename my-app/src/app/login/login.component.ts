@@ -11,9 +11,10 @@ import {Router} from "@angular/router";
 export class LoginComponent {
   username;
   password;
-  errorMessage = "";
+  error: any;
 
-  constructor(private http: HttpClient, private route: Router) {
+  constructor(private http: HttpClient,
+              private route: Router) {
   }
 
   login() {
@@ -28,7 +29,7 @@ export class LoginComponent {
         this.route.navigate(["products"]);
       }, (error) => {
         console.error(error);
-        this.errorMessage = error.error;
+        this.error = error.error.message;
       });
   }
 

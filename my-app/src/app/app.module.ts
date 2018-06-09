@@ -8,6 +8,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {ProductsComponent} from "./products/products.component";
 import {RouterModule, Routes} from "@angular/router";
 import {AuthGuardService} from "./auth-guard-service.service";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {CommonModule} from "@angular/common";
 
 const appRoutes: Routes = [
   {path: "login", component: LoginComponent},
@@ -28,6 +30,8 @@ const appRoutes: Routes = [
     ProductsComponent
   ],
   imports: [
+    CommonModule,
+    BrowserAnimationsModule,
     FormsModule,
     BrowserModule,
     HttpClientModule,

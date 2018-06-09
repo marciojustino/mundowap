@@ -1,6 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -17,15 +18,18 @@
 <div class="container-fluid">
   <br>
   <h2>Produtos</h2>
-  <div class="jumbotron">
-    <form action="" method="post" name="frmExcelImport" id="frmExcelImport" enctype="multipart/form-data">
-      <div class="form-group">
-        <label>Importar arquivo</label>&nbsp;
-        <input type="file" name="file" id="file" accept=".xls,.xlsx">
-      </div>
-      <button type="submit" id="submit" name="import" class="btn btn-primary">Importar</button>
-    </form>
-  </div>
+  <form class="jumbotron">
+    <div class="form-group">
+      <label class="btn btn-outline-primary">
+        Selecionar Arquivo
+        <input type="file" accept=".xls,.xlsx" hidden (change)="uploadFile($event)">
+      </label>
+    </div>
+    <div class="form-group" *ngIf="file">
+      <label>{{ file.name }}</label>
+    </div>
+    <button class="btn btn-primary" [hidden]="!file" (click)="import()">Importar</button>
+  </form>
 
   <table class="table table-bordered">
     <thead class="thead-dark">
