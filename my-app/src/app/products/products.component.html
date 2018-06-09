@@ -50,7 +50,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let p of products">
-      <td><a href="" id="item{{ p.id }}" (click)="remove(p)">Excluir</a></td>
+      <td><a id="item{{ p.id }}" (click)="remove(p)">Excluir</a></td>
       <td>{{ p.ean }}</td>
       <td>{{ p.name }}</td>
       <td>R${{ p.price }}</td>
