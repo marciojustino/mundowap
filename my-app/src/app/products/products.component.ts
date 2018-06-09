@@ -13,11 +13,14 @@ export class ProductsComponent implements OnInit {
   file: any;
   error: any;
   username: any;
+  success: any;
 
   constructor(private http: HttpClient, private route: Router) {
   }
 
   ngOnInit() {
+    this.error = null;
+    this.success = null;
     this.username = localStorage.getItem('user');
     this.getProducts();
   }
@@ -59,6 +62,7 @@ export class ProductsComponent implements OnInit {
     formData.append("file", this.file);
     this.http.post(`${environment.apiHost}/import.php`, formData)
       .subscribe(() => {
+        this.success = "Arquivo importado com sucesso!";
         this.getProducts();
       }, (error) => {
         console.error(error);

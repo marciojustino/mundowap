@@ -11,7 +11,7 @@
       </ul>
       <ul class="navbar-nav mr-right">
         <li class="nav-item">
-          <a class="nav-link" (click)="logout()">Sair</a>
+          <a href="" class="nav-link" (click)="logout(); false">Sair</a>
         </li>
       </ul>
     </div>
@@ -34,6 +34,9 @@
     <div class="alert alert-danger" role="alert" *ngIf="error">
       {{ error }}
     </div>
+    <div class="alert alert-success" role="alert" *ngIf="success">
+      {{ success }}
+    </div>
     <button class="btn btn-primary" [hidden]="!file" (click)="import()">Importar</button>
   </form>
 
@@ -50,7 +53,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let p of products">
-      <td><a id="item{{ p.id }}" (click)="remove(p)">Excluir</a></td>
+      <td><a href="" id="item{{ p.id }}" (click)="remove(p); false">Excluir</a></td>
       <td>{{ p.ean }}</td>
       <td>{{ p.name }}</td>
       <td>R${{ p.price }}</td>
