@@ -1,26 +1,26 @@
-version: '2'
+version: '3'
 
 services:
-  app:
+  php:
     build:
       context: .
-      dockerfile: docker/app.dockerfile
-    working_dir: /var/www
+      dockerfile: docker/api.dockerfile
     volumes:
-      - ./server:/var/www
+      - ./server:/api
+      - ./docker/php.ini:/usr/local/etc/php/php.ini
     environment:
       - "DB_PORT=3306"
       - "DB_HOST=database"
 
-  api-web:
-    build:
-      context: .
-      dockerfile: docker/web.dockerfile
-    working_dir: /var/www
-    volumes_from:
-      - app
+  api:
+    image: nginx:1.10
+    volumes:
+      - ./server:/api
+      - ./docker/vhost.conf:/etc/nginx/conf.d/default.conf
     ports:
       - 8080:80
+    links:
+      - php
 
   database:
     image: mysql:5.7
@@ -32,13 +32,12 @@ services:
       - "MYSQL_PASSWORD=secret"
       - "MYSQL_ROOT_PASSWORD=secret"
     ports:
-      - "3306:3306"
+      - 3306:3306
 
-  client-web:
+  client:
     build: 
       context: .
       dockerfile: docker/client.dockerfile
-    working_dir: /usr/src/app
     volumes:
         - ./my-app:/usr/src/app
         - '/usr/src/app/node_modules'
