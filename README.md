@@ -1,5 +1,5 @@
 # Colocando o projeto em funcionamento
-* Instalar o [docker](https://www.docker.com/) no sistema.
+* Instalar o [docker](https://store.docker.com/search?type=edition&offering=community) no sistema.
 * No diretório raiz do projeto executar o seguinte comando:
 ```bash
 <project-folder>/docker-compose up -d
