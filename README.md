@@ -4,7 +4,7 @@
 ```bash
 <project-folder>/docker-compose up -d
 ```
-Esse comando irá subir 2 containers para o serviço da aplicação: Nginx e MySQL
+Esse comando irá subir 3 containers, 1 host para o serviço de api, outro para o banco de dados e por último o host para a aplicação web.
 
 ## Base de dados
 Após os containers subirem, será necessário executar o script inicial da base de dados no MySQL.
