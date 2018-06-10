@@ -1,12 +1,10 @@
 # Pré-requisitos
 * Instalar o [docker](https://store.docker.com/search?type=edition&offering=community) no sistema.
-* Instalar o PHP 7.1
-* Instalar o [composer](https://getcomposer.org/download/)
 * No diretório raiz do projeto executar o seguinte comando:
 ```bash
-<project-folder>/docker-compose up -d
+docker-compose up
 ```
-Esse comando irá subir 3 containers, 1 host para o serviço de api, outro para o banco de dados e por último o host para a aplicação web.
+Esse comando irá subir 3 containers, 1 host para o serviço de api, outro para o banco de dados e por último o host da aplicação web.
 
 ## Base de dados
 Após os containers subirem, será necessário executar o script inicial da base de dados no MySQL.
