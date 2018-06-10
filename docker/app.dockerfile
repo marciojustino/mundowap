@@ -7,3 +7,10 @@ RUN apt-get update && apt-get install -y libmcrypt-dev \
     && docker-php-ext-install mcrypt pdo_mysql mysqli
 
 ADD ./docker/php.ini /usr/local/etc/php/php.ini
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
+
+ADD ./server /app
+WORKDIR /app
+RUN composer install --no-plugins --no-scripts
+RUN composer dump-autoload --optimize && composer run-scripts post-install-cmd

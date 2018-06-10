@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit5662cdf3b045d4d5335d8b88f45b623f
+class ComposerStaticInit41a193e6793fd8129439641400fde880
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
@@ -18,11 +18,6 @@ class ComposerStaticInit5662cdf3b045d4d5335d8b88f45b623f
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
-        ),
-        'P' => 
-        array (
-            'Psr\\SimpleCache\\' => 16,
-            'PhpOffice\\PhpSpreadsheet\\' => 25,
         ),
         'M' => 
         array (
@@ -40,20 +35,12 @@ class ComposerStaticInit5662cdf3b045d4d5335d8b88f45b623f
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
-        ),
-        'Psr\\SimpleCache\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
-        ),
-        'PhpOffice\\PhpSpreadsheet\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet',
         ),
         'MundoWap\\Test\\' => 
         array (
@@ -635,10 +622,10 @@ class ComposerStaticInit5662cdf3b045d4d5335d8b88f45b623f
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit5662cdf3b045d4d5335d8b88f45b623f::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit5662cdf3b045d4d5335d8b88f45b623f::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit5662cdf3b045d4d5335d8b88f45b623f::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit5662cdf3b045d4d5335d8b88f45b623f::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit41a193e6793fd8129439641400fde880::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit41a193e6793fd8129439641400fde880::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit41a193e6793fd8129439641400fde880::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit41a193e6793fd8129439641400fde880::$classMap;
 
         }, null, ClassLoader::class);
     }
