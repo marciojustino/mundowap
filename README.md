@@ -16,7 +16,7 @@ Localização do arquivo de script:
 Para se conectar ao MySQL utilizar as seguintes credenciais:
 ```
 host: 127.0.0.1
-username: homestead
+username: root
 password: secret
 port: 3306
 ```
