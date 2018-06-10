@@ -29,7 +29,7 @@ export class LoginComponent {
         this.route.navigate(["products"]);
       }, (error) => {
         console.error(error);
-        this.error = error.error.message;
+        this.error = 'Não foi possível efetuar o login';
       });
   }
 
