@@ -31,3 +31,10 @@ Após os containers subirem a aplicação web estará executando no seguinte end
 ```
 http://localhost:4200/
 ```
+
+# Testando a aplicação
+No script do banco de dados o seguinte usuário é incluído por padrão para os testes:
+```
+username: marciojustino
+password: 120681
+```
