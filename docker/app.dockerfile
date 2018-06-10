@@ -13,4 +13,4 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ 
 ADD ./server /app
 WORKDIR /app
 RUN composer install --no-plugins --no-scripts
-RUN composer dump-autoload --optimize && composer run-scripts post-install-cmd
+RUN composer dump-autoload --optimize
