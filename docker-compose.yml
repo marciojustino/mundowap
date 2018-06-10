@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: docker/api.dockerfile
+    command: composer install
     volumes:
       - ./server:/api
       - ./docker/php.ini:/usr/local/etc/php/php.ini
