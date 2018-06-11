@@ -5,13 +5,14 @@ services:
     build:
       context: .
       dockerfile: docker/api.dockerfile
-    # command: composer install
     volumes:
       - ./server:/api
       - ./docker/php.ini:/usr/local/etc/php/php.ini
     environment:
       - "DB_PORT=3306"
       - "DB_HOST=database"
+    depends_on:
+      - database
 
   api:
     image: nginx:1.10
@@ -24,7 +25,9 @@ services:
       - php
 
   database:
-    image: mysql:5.7
+    build:
+      context: .
+      dockerfile: docker/database.dockerfile
     volumes:
       - dbdata:/var/lib/mysql
     environment:
