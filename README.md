@@ -47,7 +47,7 @@ http://localhost:4200/
 ```
 
 # Testando a aplicação
-Utilizar o usuário abaixo para efetuar login na aplicação web:
+Abrir o browser no endereço **http://localhost:4200/** e utilizar o usuário abaixo para efetuar login na aplicação web:
 ```
 username: marciojustino
 password: 120681
