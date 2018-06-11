@@ -1,6 +1,13 @@
 # Pré-requisitos
-* Instalar o [docker](https://store.docker.com/search?type=edition&offering=community) no sistema.
-* No diretório raiz do projeto executar o seguinte comando no terminal:
+Instalar o [docker](https://store.docker.com/search?type=edition&offering=community) no sistema.
+
+# Deploy
+Fazer o clone do projeto utilizando o git:
+```bash
+git clone https://github.com/marciojustino/mundowap.git
+```
+
+No diretório raiz do projeto, executar o seguinte comando no terminal:
 ```bash
 docker-compose up -d
 ```
@@ -39,7 +46,7 @@ Após os containers subirem a aplicação web estará executando no seguinte end
 http://localhost:4200/
 ```
 
-### Testando a aplicação
+# Testando a aplicação
 Utilizar o usuário abaixo para efetuar login na aplicação web:
 ```
 username: marciojustino
