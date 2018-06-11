@@ -33,7 +33,7 @@ http://localhost:4200/
 ```
 
 # Testando a aplicação
-No script do banco de dados o seguinte usuário é incluído por padrão para os testes:
+Utilizar o usuário abaixo para efetuar login na aplicação web:
 ```
 username: marciojustino
 password: 120681
