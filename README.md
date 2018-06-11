@@ -1,8 +1,8 @@
 # Pré-requisitos
 * Instalar o [docker](https://store.docker.com/search?type=edition&offering=community) no sistema.
-* No diretório raiz do projeto executar o seguinte comando:
+* No diretório raiz do projeto executar o seguinte comando no terminal:
 ```bash
-docker-compose up
+docker-compose up -d
 ```
 Esse comando irá subir 3 containers, 1 host para o serviço de api, outro para o banco de dados e por último o host da aplicação web.
 
@@ -27,12 +27,19 @@ http://localhost:8080/
 ```
 
 ## Cliente
+
+### Composer
+Após os containers subirem, executar o seguinte comando no terminal:
+```bash
+docker-compose exec php composer install
+```
+
 Após os containers subirem a aplicação web estará executando no seguinte endereço:
 ```
 http://localhost:4200/
 ```
 
-# Testando a aplicação
+### Testando a aplicação
 Utilizar o usuário abaixo para efetuar login na aplicação web:
 ```
 username: marciojustino
